@@ -17,7 +17,7 @@ jobs:
 
     - name: Run on Condition
       run: |
-        if [ "${{ steps.check_value.outputs.input_value }}" == "desired_value" ]; then
+        if [ "${{ steps.check_value.outputs.input_value }}" == "ecs" ]; then
           echo "Run the job because the input value is as expected."
         else
           echo "Skip the job because the input value is not as expected."
