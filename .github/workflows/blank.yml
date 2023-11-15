@@ -1,9 +1,10 @@
 name: Conditional Workflow
 
 on:
-  push:
-    branches:
-      - main
+  workflow_call:
+    inputs:
+      APP_TYPE:
+        type: string
 
 jobs:
   check_input_value:
@@ -12,7 +13,7 @@ jobs:
     steps:
     - name: Check Input Value
       id: check_value
-      run: echo "::set-output name=input_value::${{ github.event.inputs.your_input_name }}"
+      run: echo "::set-output name=input_value::${{ github.event.inputs.APP_TYPE }}"
 
     - name: Run on Condition
       run: |
