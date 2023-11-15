@@ -15,14 +15,6 @@ jobs:
       id: check_value
       run: echo "::set-output name=input_value::${{ github.event.inputs.APP_TYPE }}"
 
-    - name: Run on Condition
-      run: |
-        if [ "${{ steps.check_value.outputs.input_value }}" == "ecs" ]; then
-          echo "Run the job because the input value is as expected."
-        else
-          echo "Skip the job because the input value is not as expected."
-          exit 78 # This will mark the job as neutral
-        fi
         
     - name: Run on Condition
       if: "${{ github.event.inputs.APP_TYPE }} == 'ecs'"
