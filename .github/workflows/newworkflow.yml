@@ -1,7 +1,7 @@
 name: Conditional Workflow
 
 on:
-  workflow_call:
+  workflow_dispatch:
     inputs:
       APP_TYPE:
         type: string
