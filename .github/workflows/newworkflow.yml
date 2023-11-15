@@ -17,7 +17,7 @@ jobs:
 
         
     - name: Run on Condition
-      if: "${{ github.event.inputs.APP_TYPE }} == 'ecs'"
+      if: inputs.APP_TYPE == 'ecs'
       run: |
           echo "La variable ejecutada es ${{ github.event.inputs.APP_TYPE }}"
 
